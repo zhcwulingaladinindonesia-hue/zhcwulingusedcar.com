@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Katalog Unit | ZHC Used Car</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container navbar-content">
+
+            <a href="index.html" class="logo">
+                <img src="IMAGE/logo-wuling-certified.png"
+                     alt="Wuling Certified Used Car">
+            </a>
+
+            <nav>
+                <a href="index.html#home">Home</a>
+                <a href="katalog.html">Unit</a>
+                <a href="index.html#benefit">Benefit</a>
+                <a href="index.html#promo">Promo</a>
+                <a href="index.html#trade-in">Trade In</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+
+            <a href="#katalog" class="btn-primary">
+                Cari Mobil
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- ================= KATALOG ================= -->
+    <main id="katalog">
+
+        <section class="unit-section">
+
+            <div class="container">
+
+                <!-- HEADING -->
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">
+                            OUR INVENTORY
+                        </p>
+
+                        <h1>
+                            Semua <span>Unit</span>
+                        </h1>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= FILTER ================= -->
+                <div class="search-section">
+
+                    <div class="search-box">
+
+                        <!-- MODEL -->
+                        <div class="search-item">
+                            <label for="filterModel">
+                                Model
+                            </label>
+
+                            <select id="filterModel">
+                                <option value="all">
+                                    Semua Model
+                                </option>
+
+                                <option value="Alvez">
+                                    Alvez
+                                </option>
+
+                                <option value="Almaz">
+                                    Almaz
+                                </option>
+
+                                <option value="Cortez">
+                                    Cortez
+                                </option>
+
+                                <option value="Air EV">
+                                    Air EV
+                                </option>
+
+                                <option value="Binguo EV">
+                                    Binguo EV
+                                </option>
+
+                                <option value="Cloud EV">
+                                    Cloud EV
+                                </option>
+
+                                <option value="Darion">
+                                    Darion
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <!-- TAHUN -->
+                        <div class="search-item">
+
+                            <label for="filterYear">
+                                Tahun
+                            </label>
+
+                            <select id="filterYear">
+
+                                <option value="all">
+                                    Semua Tahun
+                                </option>
+
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- HARGA -->
+                        <div class="search-item">
+
+                            <label for="filterPrice">
+                                Harga Maksimal
+                            </label>
+
+                            <select id="filterPrice">
+
+                                <option value="all">
+                                    Semua Harga
+                                </option>
+
+                                <option value="150000000">
+                                    Rp 150 Juta
+                                </option>
+
+                                <option value="200000000">
+                                    Rp 200 Juta
+                                </option>
+
+                                <option value="250000000">
+                                    Rp 250 Juta
+                                </option>
+
+                                <option value="300000000">
+                                    Rp 300 Juta
+                                </option>
+
+                                <option value="400000000">
+                                    Rp 400 Juta
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- KM -->
+                        <div class="search-item">
+
+                            <label for="filterKm">
+                                KM Maksimal
+                            </label>
+
+                            <select id="filterKm">
+
+                                <option value="all">
+                                    Semua KM
+                                </option>
+
+                                <option value="10000">
+                                    10.000 KM
+                                </option>
+
+                                <option value="20000">
+                                    20.000 KM
+                                </option>
+
+                                <option value="30000">
+                                    30.000 KM
+                                </option>
+
+                                <option value="50000">
+                                    50.000 KM
+                                </option>
+
+                                <option value="100000">
+                                    100.000 KM
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- BUTTON -->
+                        <button
+                            class="search-button"
+                            onclick="filterCatalog()">
+
+                            Cari Mobil
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= UNIT GRID ================= -->
+
+                <div class="unit-grid" id="unitGrid">
+
+
+                    <!-- UNIT 1 -->
+                    <div class="car-card"
+                         data-model="Alvez"
+                         data-year="2023"
+                         data-price="200000000"
+                         data-km="16000">
+
+                        <div class="car-image">
+
+                            <div class="status">
+                                READY
+                            </div>
+
+                            <img
+                                src="IMAGE/ALVEZ EX 2023/alvez-1.jpeg"
+                                alt="Wuling Alvez EX 2023">
+
+                        </div>
+
+
+                        <div class="car-info">
+
+                            <p class="car-brand">
+                                WULING
+                            </p>
+
+                            <h3>
+                                Alvez EX 2023
+                            </h3>
+
+                            <div class="car-spec">
+
+                                <span>2023</span>
+                                <span>•</span>
+                                <span>16.000 KM</span>
+                                <span>•</span>
+                                <span>AT</span>
+
+                            </div>
+
+
+                            <div class="car-price">
+                                Rp 200.000.000
+                            </div>
+
+
+                            <a
+                                href="detail.html?car=alvez-ex-2023"
+                                class="btn-detail">
+
+                                Lihat Detail
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- UNIT 2 -->
+                    <!-- UNIT 2 -->
+<div class="car-card"
+     data-model="Almaz"
+     data-year="2019"
+     data-price="250000000"
+     data-km="30000">
+
+    <div class="car-image">
+
+        <div class="status">
+            READY
+        </div>
+
+        <img
+            src="IMAGE/ALMAZ RS/Almaz-1.jpeg"
+            alt="Wuling Almaz EX 5 Seat 2019">
+
+    </div>
+
+    <div class="car-info">
+
+        <p class="car-brand">
+            WULING
+        </p>
+
+        <h3>
+            Almaz Exclusive 5 Seat 2019
+        </h3>
+
+        <div class="car-spec">
+            <span>2019</span>
+            <span>•</span>
+            <span>30.000 KM</span>
+            <span>•</span>
+            <span>AT</span>
+        </div>
+
+        <div class="car-price">
+            Rp 250.000.000
+        </div>
+
+        <a
+            href="detail.html?car=almaz-exclusive-5-seat-2019"
+            class="btn-detail">
+
+            Lihat Detail
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+                    <!-- UNIT 3 -->
+                    <!-- UNIT 3 -->
+<div class="car-card"
+     data-model="Alvez"
+     data-year="2025"
+     data-price="175000000"
+     data-km="100">
+
+    <div class="car-image">
+
+        <div class="status">READY</div>
+
+        <img
+            src="IMAGE/ALVEZ SE 2025/alvezse-1.jpeg"
+            alt="Wuling Alvez SE 2025">
+
+    </div>
+
+    <div class="car-info">
+
+        <p class="car-brand">WULING</p>
+
+        <h3>Alvez SE 2025</h3>
+
+        <div class="car-spec">
+            <span>2025</span>
+            <span>•</span>
+            <span>100 KM</span>
+            <span>•</span>
+            <span>AT</span>
+        </div>
+
+        <div class="car-price">
+            Rp 175.000.000
+        </div>
+
+        <a
+            href="detail.html?car=alvez-se-2025"
+            class="btn-detail">
+            Lihat Detail
+        </a>
+
+    </div>
+
+</div>
+</div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <img
+                    src="IMAGE/logo-zhc-indonesia.png"
+                    alt="PT ZHC Aladin Indonesia">
+
+                <p>
+                    Wuling Certified Used Car
+                </p>
+
+                <p>
+                    Solusi mobil bekas berkualitas dan terpercaya.
+                </p>
+
+            </div>
+
+
+            <div class="footer-info">
+
+                <h3>
+                    ZHC USED CAR
+                </h3>
+
+                <p>
+                    Wuling Certified Used Car
+                </p>
+
+                <p>
+                    Trade In • Kredit • Certified Used Car
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 PT ZHC Aladin Indonesia.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function filterCatalog() {
+
+            const model =
+                document.getElementById("filterModel").value;
+
+            const year =
+                document.getElementById("filterYear").value;
+
+            const price =
+                document.getElementById("filterPrice").value;
+
+            const km =
+                document.getElementById("filterKm").value;
+
+
+            const cards =
+                document.querySelectorAll(".car-card");
+
+            let visible = 0;
+
+
+            cards.forEach(function(card) {
+
+                const cardModel =
+                    card.dataset.model;
+
+                const cardYear =
+                    card.dataset.year;
+
+                const cardPrice =
+                    Number(card.dataset.price);
+
+                const cardKm =
+                    Number(card.dataset.km);
+
+
+                const modelMatch =
+                    model === "all" ||
+                    cardModel === model;
+
+
+                const yearMatch =
+                    year === "all" ||
+                    cardYear === year;
+
+
+                const priceMatch =
+                    price === "all" ||
+                    cardPrice <= Number(price);
+
+
+                const kmMatch =
+                    km === "all" ||
+                    cardKm <= Number(km);
+
+
+                if (
+                    modelMatch &&
+                    yearMatch &&
+                    priceMatch &&
+                    kmMatch
+                ) {
+
+                    card.style.display = "";
+
+                    visible++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            const noResult =
+                document.getElementById("noResult");
+
+
+            if (visible === 0) {
+
+                noResult.style.display = "block";
+
+            } else {
+
+                noResult.style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

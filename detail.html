@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detail Unit | ZHC Used Car</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container navbar-content">
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="IMAGE/logo-wuling-certified.png"
+                    alt="Wuling Certified Used Car">
+
+            </a>
+
+
+            <nav>
+
+                <a href="index.html#home">Home</a>
+
+                <a href="katalog.html">Unit</a>
+
+                <a href="index.html#benefit">Benefit</a>
+
+                <a href="index.html#promo">Promo</a>
+
+                <a href="index.html#trade-in">Trade In</a>
+
+                <a href="index.html#contact">Contact</a>
+
+            </nav>
+
+
+            <a href="katalog.html" class="btn-primary">
+
+                Cari Mobil
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= DETAIL ================= -->
+
+    <main>
+
+        <section class="detail-section">
+
+            <div class="container">
+
+
+                <!-- BREADCRUMB -->
+
+                <div class="detail-breadcrumb">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <span>›</span>
+
+                    <a href="katalog.html">
+                        Unit
+                    </a>
+
+                    <span>›</span>
+
+                    <span id="breadcrumbName">
+                        Detail Unit
+                    </span>
+
+                </div>
+
+
+
+                <!-- DETAIL GRID -->
+
+                <div class="detail-grid">
+
+
+                    <!-- ================= GALLERY ================= -->
+
+                    <div class="detail-gallery">
+
+
+                        <div class="detail-status">
+                            READY
+                        </div>
+
+
+                        <!-- MAIN IMAGE -->
+
+                        <div class="detail-main-image">
+
+                            <img
+                                id="mainImage"
+                                src=""
+                                alt="Detail kendaraan">
+
+                        </div>
+
+
+                        <!-- THUMBNAILS -->
+
+                        <div
+                            class="detail-thumbnails"
+                            id="thumbnails">
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- ================= INFO ================= -->
+
+                    <div class="detail-info">
+
+
+                        <p class="car-brand">
+                            WULING
+                        </p>
+
+
+                        <h1 id="carName">
+                            Loading...
+                        </h1>
+
+
+                        <div
+                            class="detail-price"
+                            id="carPrice">
+                        </div>
+
+
+                        <!-- SPECS -->
+
+                        <div class="detail-specs">
+
+
+                            <div class="detail-spec-item">
+
+                                <span>
+                                    Tahun
+                                </span>
+
+                                <strong id="carYear">
+                                </strong>
+
+                            </div>
+
+
+                            <div class="detail-spec-item">
+
+                                <span>
+                                    Kilometer
+                                </span>
+
+                                <strong id="carKm">
+                                </strong>
+
+                            </div>
+
+
+                            <div class="detail-spec-item">
+
+                                <span>
+                                    Transmisi
+                                </span>
+
+                                <strong id="carTransmission">
+                                </strong>
+
+                            </div>
+
+
+                            <div class="detail-spec-item">
+
+                                <span>
+                                    Status
+                                </span>
+
+                                <strong>
+                                    READY
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="detail-description">
+
+                            <h2>
+                                Tentang Unit
+                            </h2>
+
+                            <p id="carDescription">
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- WHATSAPP -->
+
+                        <a
+                            id="whatsappButton"
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                            class="detail-whatsapp">
+
+                            Tanya Unit via WhatsApp
+
+                        </a>
+
+
+                        <!-- BACK -->
+
+                        <a
+                            href="katalog.html"
+                            class="detail-back">
+
+                            ← Kembali ke Katalog
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+
+            <div class="footer-brand">
+
+                <img
+                    src="IMAGE/logo-zhc-indonesia.png"
+                    alt="PT ZHC Aladin Indonesia">
+
+                <p>
+                    Wuling Certified Used Car
+                </p>
+
+                <p>
+                    Solusi mobil bekas berkualitas dan terpercaya.
+                </p>
+
+            </div>
+
+
+            <div class="footer-info">
+
+                <h3>
+                    ZHC USED CAR
+                </h3>
+
+                <p>
+                    Wuling Certified Used Car
+                </p>
+
+                <p>
+                    Trade In • Kredit • Certified Used Car
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 PT ZHC Aladin Indonesia.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* =========================================
+           DATA UNIT
+        ========================================= */
+
+
+        const cars = {
+
+
+            /* ================= ALVEZ ================= */
+
+            "alvez-ex-2023": {
+
+                name:
+                    "Alvez EX 2023",
+
+                price:
+                    "Rp 200.000.000",
+
+                year:
+                    "2023",
+
+                km:
+                    "16.000 KM",
+
+                transmission:
+                    "AT",
+
+                description:
+                    "Wuling Alvez EX tahun 2023 tersedia di ZHC Used Car. Hubungi tim kami untuk informasi lebih lanjut mengenai kondisi unit dan proses pembelian.",
+
+               images: [
+    "IMAGE/ALVEZ EX 2023/alvez-1.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-2.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-3.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-4.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-5.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-6.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-7.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-8.jpeg",
+    "IMAGE/ALVEZ EX 2023/alvez-9.jpeg"
+]
+
+            },
+
+
+            /* ================= ALMAZ ================= */
+
+            "almaz-exclusive-5-seat-2019": {
+
+                name:
+                    "Almaz Exclusive 5 Seat 2019",
+
+                price:
+                    "Rp 160.000.000",
+
+                year:
+                    "2019",
+
+                km:
+                    "109.000 KM",
+
+                transmission:
+                    "AT",
+
+                description:
+                    "Wuling Almaz Exclusive 5 Seat tahun 2019 tersedia di ZHC Used Car. Hubungi tim kami untuk informasi lebih lanjut mengenai kondisi unit dan proses pembelian.",
+
+                images: [
+
+                    "IMAGE/ALMAZ RS/Almaz-1.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-2.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-3.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-4.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-5.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-6.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-7.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-8.jpeg",
+
+                    "IMAGE/ALMAZ RS/Almaz-9.jpeg"
+
+                ]
+
+            },
+
+
+            /* ================= CLOUD EV ================= */
+"alvez-se-2025": {
+
+    name: "Alvez SE 2025",
+
+    price: "Rp 175.000.000",
+
+    year: "2025",
+
+    km: "100 KM",
+
+    transmission: "AT",
+
+    description:
+        "Wuling Alvez SE tahun 2025 tersedia di ZHC Used Car. Hubungi tim kami untuk informasi lebih lanjut mengenai kondisi unit dan proses pembelian.",
+
+    images: [
+
+        "IMAGE/ALVEZ SE 2025/alvezse-1.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-2.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-3.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-4.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-5.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-6.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-7.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-8.jpeg",
+        "IMAGE/ALVEZ SE 2025/alvezse-9.jpeg"
+
+    ]
+
+}
+        };
+
+
+
+        /* =========================================
+           AMBIL PARAMETER URL
+        ========================================= */
+
+
+        const urlParams =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const carId =
+            urlParams.get("car");
+
+
+
+        /* =========================================
+           CARI DATA MOBIL
+        ========================================= */
+
+
+        const car =
+            cars[carId];
+
+
+
+        /* =========================================
+           JIKA MOBIL DITEMUKAN
+        ========================================= */
+
+
+        if (car) {
+
+
+            /* NAME */
+
+            document.getElementById(
+                "carName"
+            ).textContent =
+                car.name;
+
+
+            /* BREADCRUMB */
+
+            document.getElementById(
+                "breadcrumbName"
+            ).textContent =
+                car.name;
+
+
+            /* PRICE */
+
+            document.getElementById(
+                "carPrice"
+            ).textContent =
+                car.price;
+
+
+            /* YEAR */
+
+            document.getElementById(
+                "carYear"
+            ).textContent =
+                car.year;
+
+
+            /* KM */
+
+            document.getElementById(
+                "carKm"
+            ).textContent =
+                car.km;
+
+
+            /* TRANSMISSION */
+
+            document.getElementById(
+                "carTransmission"
+            ).textContent =
+                car.transmission;
+
+
+            /* DESCRIPTION */
+
+            document.getElementById(
+                "carDescription"
+            ).textContent =
+                car.description;
+
+
+
+            /* =====================================
+               MAIN IMAGE
+            ===================================== */
+
+
+            const mainImage =
+                document.getElementById(
+                    "mainImage"
+                );
+
+
+            mainImage.src =
+                car.images[0];
+
+
+            mainImage.alt =
+                car.name;
+
+
+
+            /* =====================================
+               THUMBNAILS
+            ===================================== */
+
+
+            const thumbnails =
+                document.getElementById(
+                    "thumbnails"
+                );
+
+
+            car.images.forEach(
+                function(image, index) {
+
+
+                    const thumbnail =
+                        document.createElement(
+                            "img"
+                        );
+
+
+                    thumbnail.src =
+                        image;
+
+
+                    thumbnail.alt =
+                        car.name +
+                        " foto " +
+                        (index + 1);
+
+
+                    if (index === 0) {
+
+                        thumbnail.classList.add(
+                            "active"
+                        );
+
+                    }
+
+
+                    thumbnail.addEventListener(
+                        "click",
+                        function() {
+
+
+                            mainImage.src =
+                                image;
+
+
+                            document
+                                .querySelectorAll(
+                                    ".detail-thumbnails img"
+                                )
+                                .forEach(
+                                    function(img) {
+
+                                        img.classList.remove(
+                                            "active"
+                                        );
+
+                                    }
+                                );
+
+
+                            thumbnail.classList.add(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    thumbnails.appendChild(
+                        thumbnail
+                    );
+
+                }
+            );
+
+
+
+            /* =====================================
+               WHATSAPP
+            ===================================== */
+
+
+            const message =
+                "Halo ZHC Used Car, saya tertarik dengan " +
+                car.name +
+                ". Mohon informasi lebih lanjut.";
+
+
+            document.getElementById(
+                "whatsappButton"
+            ).href =
+                "https://wa.me/6285178247141?text=" +
+                encodeURIComponent(message);
+
+
+
+            /* =====================================
+               PAGE TITLE
+            ===================================== */
+
+
+            document.title =
+                car.name +
+                " | ZHC Used Car";
+
+
+        }
+
+
+        /* =========================================
+           JIKA CAR TIDAK DITEMUKAN
+        ========================================= */
+
+
+        else {
+
+
+            document.getElementById(
+                "carName"
+            ).textContent =
+                "Unit Tidak Ditemukan";
+
+
+            document.getElementById(
+                "carDescription"
+            ).textContent =
+                "Unit yang kamu cari tidak tersedia.";
+
+
+            document.getElementById(
+                "mainImage"
+            ).style.display =
+                "none";
+
+
+            document.querySelector(
+                ".detail-status"
+            ).style.display =
+                "none";
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
