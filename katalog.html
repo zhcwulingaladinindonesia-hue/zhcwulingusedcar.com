@@ -127,6 +127,7 @@
                                 <option value="2022">2022</option>
                                 <option value="2021">2021</option>
                                 <option value="2020">2020</option>
+                                <option value="2019">2019</option>
 
                             </select>
 
@@ -293,8 +294,8 @@
 <div class="car-card"
      data-model="Almaz"
      data-year="2019"
-     data-price="250000000"
-     data-km="30000">
+     data-price="160000000"
+     data-km="109000">
 
     <div class="car-image">
 
@@ -444,105 +445,7 @@
 
     </footer>
 
-
-
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <script>
-
-        function filterCatalog() {
-
-            const model =
-                document.getElementById("filterModel").value;
-
-            const year =
-                document.getElementById("filterYear").value;
-
-            const price =
-                document.getElementById("filterPrice").value;
-
-            const km =
-                document.getElementById("filterKm").value;
-
-
-            const cards =
-                document.querySelectorAll(".car-card");
-
-            let visible = 0;
-
-
-            cards.forEach(function(card) {
-
-                const cardModel =
-                    card.dataset.model;
-
-                const cardYear =
-                    card.dataset.year;
-
-                const cardPrice =
-                    Number(card.dataset.price);
-
-                const cardKm =
-                    Number(card.dataset.km);
-
-
-                const modelMatch =
-                    model === "all" ||
-                    cardModel === model;
-
-
-                const yearMatch =
-                    year === "all" ||
-                    cardYear === year;
-
-
-                const priceMatch =
-                    price === "all" ||
-                    cardPrice <= Number(price);
-
-
-                const kmMatch =
-                    km === "all" ||
-                    cardKm <= Number(km);
-
-
-                if (
-                    modelMatch &&
-                    yearMatch &&
-                    priceMatch &&
-                    kmMatch
-                ) {
-
-                    card.style.display = "";
-
-                    visible++;
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
-
-
-            const noResult =
-                document.getElementById("noResult");
-
-
-            if (visible === 0) {
-
-                noResult.style.display = "block";
-
-            } else {
-
-                noResult.style.display = "none";
-
-            }
-
-        }
-
-    </script>
+    <script src="JS/script.js"></script>
 
 </body>
 </html>
