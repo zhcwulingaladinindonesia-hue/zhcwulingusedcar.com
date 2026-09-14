@@ -537,12 +537,12 @@ select {
 
 
 /* =========================================================
-   BENEFIT - REDESIGNED
+   BENEFIT
    ========================================================= */
 
 .benefit-section {
-    background:
-        linear-gradient(180deg, #f7f7f7 0%, #f2f2f2 100%);
+    padding: 110px 0;
+    background: #f5f5f5;
 }
 
 .benefit-grid {
@@ -552,23 +552,50 @@ select {
 }
 
 .benefit-card {
-    min-height: 245px;
-    padding: 28px;
+    position: relative;
+    min-height: 255px;
+    padding: 30px;
     background: #fff;
-    border: 1px solid #e9e9e9;
+    border: 1px solid #e7e7e7;
     border-radius: 14px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.035);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.035);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.benefit-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: #111;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.09);
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-number {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    color: #cfcfcf;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .benefit-icon {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -576,7 +603,8 @@ select {
     border-radius: 50%;
     background: #111;
     color: #fff;
-    font-size: 17px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .benefit-card h3 {
@@ -593,92 +621,156 @@ select {
 
 
 /* =========================================================
-   TRADE IN - REDESIGNED
+   TRADE IN
    ========================================================= */
 
 .trade-section {
-    position: relative;
-    overflow: hidden;
-    padding: 76px 0;
-    background: #0d0d0d;
-    color: #fff;
+    padding: 32px 0;
+    background: #f5f5f5;
 }
 
-.trade-section::before {
-    content: "";
-    position: absolute;
-    right: -180px;
-    top: -260px;
-    width: 540px;
-    height: 540px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    box-shadow:
-        0 0 0 70px rgba(255, 255, 255, 0.015),
-        0 0 0 140px rgba(255, 255, 255, 0.01);
-}
-
-.trade-content {
+.trade-card {
     position: relative;
-    z-index: 2;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 50px;
+    padding: 58px 62px;
+    border-radius: 18px;
+    background: #0d0d0d;
+    color: #fff;
+    overflow: hidden;
 }
 
-.trade-content h2 {
+.trade-card::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -180px;
+    top: -220px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 50%;
+    box-shadow: 0 0 0 60px rgba(255,255,255,.015), 0 0 0 120px rgba(255,255,255,.01);
+    pointer-events: none;
+}
+
+.trade-copy,
+.trade-button {
+    position: relative;
+    z-index: 2;
+}
+
+.trade-copy .section-label {
+    color: #999;
+}
+
+.trade-content h2,
+.trade-card h2 {
     margin: 8px 0 12px;
     font-size: clamp(36px, 5vw, 52px);
     line-height: 1.05;
     letter-spacing: -1px;
 }
 
-.trade-content p:not(.section-label) {
+.trade-copy p:not(.section-label) {
     max-width: 650px;
     color: #c5c5c5;
     font-size: 15px;
     line-height: 1.75;
 }
 
-.trade-section .section-label {
-    color: #aaa;
-}
-
-.trade-section .btn-primary {
-    min-width: 190px;
-    padding: 15px 24px;
+.trade-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-width: 205px;
+    padding: 16px 20px;
+    border-radius: 8px;
     background: #fff;
     color: #111;
-    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 800;
+    transition: .25s ease;
 }
 
-.trade-section .btn-primary:hover {
+.trade-button:hover {
+    transform: translateY(-3px);
     background: #e8e8e8;
 }
 
 
 /* =========================================================
-   CONTACT - REDESIGNED
+   CONTACT
    ========================================================= */
 
 .contact-section {
+    padding: 110px 0;
     background: #fff;
 }
 
+.contact-card {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 70px;
+    align-items: center;
+    padding: 62px;
+    border: 1px solid #e7e7e7;
+    border-radius: 18px;
+    background: #fafafa;
+}
+
+.contact-copy h2 {
+    margin: 8px 0 14px;
+    font-size: clamp(38px, 5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.contact-copy h2 span {
+    opacity: .42;
+}
+
+.contact-copy > p:last-child {
+    max-width: 540px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
 .contact-buttons {
+    display: grid;
+    gap: 10px;
+}
+
+.contact-button {
     display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #111;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .25s ease;
 }
 
-.contact-buttons a {
-    min-width: 150px;
+.contact-button:hover {
+    border-color: #111;
+    transform: translateX(3px);
 }
 
-.contact-buttons .btn-secondary {
-    border-color: #d5d5d5;
+.contact-button-primary {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+}
+
+.contact-button-primary:hover {
+    background: #2a2a2a;
 }
 
 
@@ -711,20 +803,32 @@ footer {
     line-height: 1.7;
 }
 
+.footer-info {
+    padding-top: 4px;
+}
+
+.footer-label {
+    margin-bottom: 7px;
+    color: #666 !important;
+    font-size: 10px !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
 .footer-info h3 {
-    margin-bottom: 8px;
-    font-size: 16px;
+    margin-bottom: 7px;
+    font-size: 18px;
 }
 
 .footer-bottom {
     padding: 20px 0;
     border-top: 1px solid #222;
-    text-align: center;
 }
 
 .footer-bottom p {
     color: #777;
     font-size: 12px;
+    text-align: center;
 }
 
 
@@ -1042,39 +1146,50 @@ footer {
     }
 
     .benefit-card {
-        min-height: auto;
-        padding: 24px;
+        min-height: 0;
+        padding: 25px;
     }
 
     .benefit-icon {
-        margin-bottom: 17px;
+        margin-bottom: 18px;
     }
 
     .trade-section {
-        padding: 60px 0;
+        padding: 18px 0;
     }
 
-    .trade-content {
+    .trade-card {
         grid-template-columns: 1fr;
         gap: 25px;
+        padding: 36px 25px;
+        border-radius: 14px;
     }
 
-    .trade-content h2 {
-        font-size: 37px;
+    .trade-card h2 {
+        font-size: 36px;
     }
 
-    .trade-section .btn-primary {
+    .trade-button {
         width: 100%;
         min-width: 0;
     }
 
-    .contact-buttons {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .contact-section {
+        padding: 75px 0;
     }
 
-    .contact-buttons a {
+    .contact-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 30px 24px;
+        border-radius: 14px;
+    }
+
+    .contact-copy h2 {
+        font-size: 36px;
+    }
+
+    .contact-button {
         width: 100%;
     }
 
@@ -1135,4 +1250,48 @@ footer {
     .car-image {
         height: 240px;
     }
+}
+
+
+/* =========================================
+   TRUST STATISTICS
+========================================= */
+.trust-section {
+    padding: 45px 0;
+    background: #111111;
+    color: #ffffff;
+}
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+.trust-item {
+    text-align: center;
+    padding: 10px 25px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+}
+.trust-item:last-child { border-right: none; }
+.trust-item strong {
+    display: block;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.trust-item span {
+    display: block;
+    color: #aaaaaa;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+@media (max-width: 600px) {
+    .trust-section { padding: 35px 0; }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+    .trust-item { padding: 5px 15px; }
+    .trust-item:nth-child(2) { border-right: none; }
+    .trust-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.15); }
+    .trust-item strong { font-size: 28px; }
+    .trust-item span { font-size: 10px; line-height: 1.4; }
 }

@@ -1,6 +1,5 @@
 // ==========================================
 // ZHC USED CAR - SCRIPT.JS
-// Clean, reusable & responsive-ready
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,25 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initDetailPage();
 });
 
-
 // ==========================================
 // FILTER
 // ==========================================
 
 function initFilters() {
-    const model = document.getElementById("filterModel");
-    const year = document.getElementById("filterYear");
-    const price = document.getElementById("filterPrice");
-    const km = document.getElementById("filterKm");
     const button = document.querySelector(".search-button");
-
-    if (!model || !year || !price || !km) return;
-
-    [model, year, price, km].forEach(select => {
-        select.addEventListener("change", () => {
-            // Tidak langsung menjalankan filter agar user tetap bisa memilih semua opsi.
-        });
-    });
 
     if (button) {
         button.addEventListener("click", filterUnits);
@@ -75,11 +61,8 @@ function getValue(id) {
     return element ? element.value : "all";
 }
 
-
-// Backward compatibility for existing inline onclick="filterUnits()"
 window.filterUnits = filterUnits;
 window.filterCatalog = filterUnits;
-
 
 // ==========================================
 // SMOOTH SCROLL
@@ -106,9 +89,8 @@ function initSmoothScroll() {
     });
 }
 
-
 // ==========================================
-// DETAIL PAGE
+// UNIT DATA
 // ==========================================
 
 const cars = {
@@ -134,23 +116,23 @@ const cars = {
     },
 
     "almaz-exclusive-5-seat-2019": {
-        name: "Almaz Exclusive 5 Seat 2019",
+        name: "Almaz Exclusive 5 Seat 2019 - Merah",
         price: "Rp 160.000.000",
         year: "2019",
         km: "109.000 KM",
         transmission: "AT",
         description:
-            "Wuling Almaz Exclusive 5 Seat tahun 2019 tersedia di ZHC Used Car. Hubungi tim kami untuk informasi lebih lanjut mengenai kondisi unit dan proses pembelian.",
+            "Wuling Almaz Exclusive 5 Seat tahun 2019 warna merah tersedia di ZHC Used Car. Hubungi tim kami untuk informasi lebih lanjut mengenai kondisi unit dan proses pembelian.",
         images: [
-            "IMAGE/ALMAZ RS/Almaz-1.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-2.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-3.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-4.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-5.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-6.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-7.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-8.jpeg",
-            "IMAGE/ALMAZ RS/Almaz-9.jpeg"
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-1.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-2.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-3.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-4.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-5.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-6.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-7.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-8.jpeg",
+            "IMAGE/ALMAZ EX 2019 MERAH/Almaz-9.jpeg"
         ]
     },
 
@@ -173,16 +155,61 @@ const cars = {
             "IMAGE/ALVEZ SE 2025/alvezse-8.jpeg",
             "IMAGE/ALVEZ SE 2025/alvezse-9.jpeg"
         ]
+    },
+
+    "almaz-exclusive-5-seat-2019-silver": {
+        name: "Almaz Exclusive 5 Seat 2019 - Silver",
+        price: "Rp 160.000.000",
+        year: "2019",
+        km: "98.000 KM",
+        transmission: "Automatic",
+        description:
+            "Wuling Almaz Exclusive 5 Seat tahun 2019 warna silver dengan kilometer 98.000 KM tersedia di ZHC Used Car.",
+        images: [
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver1.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver2.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver3.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver4.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver5.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver6.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver7.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver8.jpeg",
+            "IMAGE/ALMAZ EX 2019 SILVER/almaz-ex-silver9.jpeg"
+        ]
+    },
+
+    "almaz-exclusive-5-seat-2019-abu": {
+        name: "Almaz Exclusive 5 Seat 2019 - Abu",
+        price: "Rp 160.000.000",
+        year: "2019",
+        km: "54.000 KM",
+        transmission: "Automatic",
+        description:
+            "Wuling Almaz Exclusive 5 Seat tahun 2019 warna abu dengan kilometer 54.000 KM tersedia di ZHC Used Car.",
+        images: [
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu1.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu2.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu3.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu4.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu5.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu6.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu7.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu8.jpeg",
+            "IMAGE/ALMAZ EX 2019 ABU/almaz-ex-abu9.jpeg"
+        ]
     }
 };
+
+// ==========================================
+// DETAIL PAGE
+// ==========================================
 
 function initDetailPage() {
     const mainImage = document.getElementById("mainImage");
 
     if (!mainImage) return;
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const carId = urlParams.get("car");
+    const carId = new URLSearchParams(window.location.search).get("car");
     const car = cars[carId];
 
     if (!car) {
