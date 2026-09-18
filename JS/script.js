@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initDetailPage();
 });
 
+
 // ==========================================
 // FILTER
 // ==========================================
@@ -64,6 +65,7 @@ function getValue(id) {
 window.filterUnits = filterUnits;
 window.filterCatalog = filterUnits;
 
+
 // ==========================================
 // SMOOTH SCROLL
 // ==========================================
@@ -89,19 +91,26 @@ function initSmoothScroll() {
     });
 }
 
+
 // ==========================================
 // UNIT DATA
 // ==========================================
 
 const cars = {
+
+    // ==========================================
+    // ALVEZ EX 2023 - SOLD
+    // ==========================================
+
     "alvez-ex-2023": {
         name: "Alvez EX 2023",
+        status: "sold",
         price: "Rp 200.000.000",
         year: "2023",
         km: "16.000 KM",
         transmission: "AT",
         description:
-            "Wuling Alvez EX tahun 2023 tersedia di ZHC Used Car. Hubungi tim kami untuk informasi lebih lanjut mengenai kondisi unit dan proses pembelian.",
+            "Wuling Alvez EX tahun 2023 telah terjual. Unit ini sudah tidak tersedia di ZHC Used Car.",
         images: [
             "IMAGE/ALVEZ EX 2023/alvez-1.jpeg",
             "IMAGE/ALVEZ EX 2023/alvez-2.jpeg",
@@ -115,8 +124,14 @@ const cars = {
         ]
     },
 
+
+    // ==========================================
+    // ALMAZ EXCLUSIVE 5 SEAT 2019 - MERAH
+    // ==========================================
+
     "almaz-exclusive-5-seat-2019": {
         name: "Almaz Exclusive 5 Seat 2019 - Merah",
+        status: "available",
         price: "Rp 160.000.000",
         year: "2019",
         km: "109.000 KM",
@@ -136,14 +151,20 @@ const cars = {
         ]
     },
 
+
+    // ==========================================
+    // ALVEZ SE 2025 - SOLD
+    // ==========================================
+
     "alvez-se-2025": {
         name: "Alvez SE 2025",
+        status: "sold",
         price: "Rp 175.000.000",
         year: "2025",
         km: "100 KM",
         transmission: "AT",
         description:
-            "Wuling Alvez SE tahun 2025 tersedia di ZHC Used Car. Hubungi tim kami untuk informasi lebih lanjut mengenai kondisi unit dan proses pembelian.",
+            "Wuling Alvez SE tahun 2025 telah terjual. Unit ini sudah tidak tersedia di ZHC Used Car.",
         images: [
             "IMAGE/ALVEZ SE 2025/alvezse-1.jpeg",
             "IMAGE/ALVEZ SE 2025/alvezse-2.jpeg",
@@ -157,8 +178,14 @@ const cars = {
         ]
     },
 
+
+    // ==========================================
+    // ALMAZ EXCLUSIVE 5 SEAT 2019 - SILVER
+    // ==========================================
+
     "almaz-exclusive-5-seat-2019-silver": {
         name: "Almaz Exclusive 5 Seat 2019 - Silver",
+        status: "available",
         price: "Rp 160.000.000",
         year: "2019",
         km: "98.000 KM",
@@ -178,8 +205,14 @@ const cars = {
         ]
     },
 
+
+    // ==========================================
+    // ALMAZ EXCLUSIVE 5 SEAT 2019 - ABU
+    // ==========================================
+
     "almaz-exclusive-5-seat-2019-abu": {
         name: "Almaz Exclusive 5 Seat 2019 - Abu",
+        status: "available",
         price: "Rp 160.000.000",
         year: "2019",
         km: "54.000 KM",
@@ -199,6 +232,7 @@ const cars = {
         ]
     }
 };
+
 
 // ==========================================
 // DETAIL PAGE
@@ -229,15 +263,21 @@ function initDetailPage() {
     mainImage.alt = car.name;
 
     renderThumbnails(car, mainImage);
-    setWhatsApp(car.name);
+
+    // WhatsApp hanya aktif untuk unit yang masih tersedia
+    if (car.status === "available") {
+        setWhatsApp(car.name);
+    }
 
     document.title = `${car.name} | ZHC Used Car`;
 }
+
 
 function setText(id, value) {
     const element = document.getElementById(id);
     if (element) element.textContent = value;
 }
+
 
 function renderThumbnails(car, mainImage) {
     const container = document.getElementById("thumbnails");
@@ -247,6 +287,7 @@ function renderThumbnails(car, mainImage) {
     container.innerHTML = "";
 
     car.images.forEach((image, index) => {
+
         const thumbnail = document.createElement("img");
 
         thumbnail.src = image;
@@ -258,6 +299,7 @@ function renderThumbnails(car, mainImage) {
         }
 
         thumbnail.addEventListener("click", () => {
+
             mainImage.src = image;
 
             container.querySelectorAll("img").forEach(img => {
@@ -271,6 +313,7 @@ function renderThumbnails(car, mainImage) {
     });
 }
 
+
 function setWhatsApp(carName) {
     const button = document.getElementById("whatsappButton");
 
@@ -283,9 +326,13 @@ function setWhatsApp(carName) {
         `https://wa.me/6285178247141?text=${encodeURIComponent(message)}`;
 }
 
+
 function showMissingCar() {
+
     setText("carName", "Unit Tidak Ditemukan");
+
     setText("breadcrumbName", "Unit Tidak Ditemukan");
+
     setText(
         "carDescription",
         "Unit yang kamu cari tidak tersedia atau link unit sudah tidak valid."
