@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ZHC Used Car CMS</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <div id="loginView" class="login-wrap">
+        <form id="loginForm" class="login-card">
+            <div class="brand-mark">🚘 <b>ZHC CMS</b></div>
+            <p class="eyebrow">INVENTORY MANAGEMENT</p>
+            <h1>Admin Login</h1>
+            <p>Masuk untuk mengelola unit ZHC Used Car.</p><label>Password Admin<input id="adminPassword"
+                    type="password" required autocomplete="current-password"></label><button class="btn primary"
+                type="submit">Login</button>
+            <div id="loginMessage" class="message"></div>
+        </form>
+    </div>
+    <div id="appView" class="app hidden">
+        <aside class="sidebar">
+            <div class="brand-mark">🚘 <b>ZHC CMS</b></div>
+            <div class="side-label">MENU</div><button class="side-link active" data-view="inventory">▣ &nbsp; Used
+                Cars</button><button class="side-link" data-view="form">＋ &nbsp; Add Car</button>
+            <div class="side-bottom"><a href="../index.html" target="_blank">↗ Lihat Website</a><button
+                    id="logoutBtn">Keluar</button></div>
+        </aside>
+        <main class="main">
+            <header class="topbar"><span>Dashboard / <b id="crumb">Used Cars</b></span><span>Administrator</span>
+            </header>
+            <section id="inventoryView" class="view">
+                <div class="page-head">
+                    <div>
+                        <p class="eyebrow">INVENTORY MANAGEMENT</p>
+                        <h1>Used Cars</h1>
+                        <p>Kelola unit kendaraan yang tampil di website.</p>
+                    </div><button id="addCarBtn" class="btn primary">＋ Add Car</button>
+                </div>
+                <div class="stats">
+                    <div><span>Total Unit</span><strong id="totalCount">0</strong></div>
+                    <div><span>Available</span><strong id="availableCount">0</strong></div>
+                    <div><span>Reserved</span><strong id="reservedCount">0</strong></div>
+                    <div><span>Sold Out</span><strong id="soldCount">0</strong></div>
+                </div>
+                <div class="table-card">
+                    <div class="table-tools">
+                        <h2>Daftar Inventaris</h2><input id="searchInput" placeholder="Cari model / varian...">
+                    </div>
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nama Kendaraan</th>
+                                    <th>Harga</th>
+                                    <th>Tahun</th>
+                                    <th>Transmisi</th>
+                                    <th>Odometer</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="carsTable"></tbody>
+                        </table>
+                    </div>
+                    <p id="emptyState" class="empty hidden">Belum ada data kendaraan.</p>
+                </div>
+            </section>
+            <section id="formView" class="view hidden">
+                <div class="page-head">
+                    <div>
+                        <p class="eyebrow">VEHICLE MANAGEMENT</p>
+                        <h1 id="formTitle">Add Car</h1>
+                        <p>Lengkapi informasi kendaraan di bawah ini.</p>
+                    </div><button class="btn light" id="backBtn">← Kembali</button>
+                </div>
+                <form id="carForm"><input type="hidden" id="carId">
+                    <div class="form-card">
+                        <h2>01. Basic Information</h2>
+                        <div class="form-grid">
+                            <label>Brand *<input id="brand" required placeholder="WULING"></label><label>Model *<input
+                                    id="model" required placeholder="Almaz"></label><label>Variant<input id="variant"
+                                    placeholder="Exclusive 5 Seat"></label><label>Tahun *<input id="year" type="number"
+                                    min="1990" max="2035" required></label><label>Transmisi *<select id="transmission"
+                                    required>
+                                    <option value="">Pilih transmisi</option>
+                                    <option>Automatic</option>
+                                    <option>CVT</option>
+                                    <option>Manual</option>
+                                    <option>Single Reduction Gear</option>
+                                    <option> lainnya</option>
+                                </select></label><label>Odometer (KM) *<input id="km" type="number" min="0"
+                                    required></label><label>Warna<input id="color"
+                                    placeholder="Hitam"></label><label>Jenis Bahan Bakar<select id="fuelType">
+                                    <option>Bensin</option>
+                                    <option>Diesel</option>
+                                    <option>Electric</option>
+                                    <option>Hybrid</option>
+                                </select></label>
+                        </div>
+                    </div>
+                    <div class="form-card">
+                        <h2>02. Vehicle Gallery</h2>
+                        <p class="hint">Maksimal 15 foto. Foto akan dikompres otomatis sebelum dikirim.</p>
+                        <div id="existingGallery" class="gallery-preview"></div><label class="upload-box">＋ Pilih Foto
+                            Kendaraan<input id="photos" type="file" accept="image/*" multiple hidden><span>JPG / PNG /
+                                WEBP • Maksimal 15 foto</span></label>
+                        <div id="newGallery" class="gallery-preview"></div>
+                        <p id="photoCount" class="hint">0 foto dipilih</p>
+                    </div>
+                    <div class="form-card">
+                        <h2>03. Security Features</h2>
+                        <div id="securityChoices" class="checks"></div>
+                    </div>
+                    <div class="form-card">
+                        <h2>04. Comfort & Convenience</h2>
+                        <div id="comfortChoices" class="checks"></div>
+                    </div>
+                    <div class="form-card">
+                        <h2>05. Pricing & Description</h2>
+                        <div class="form-grid"><label>Harga Cash (Rp) *<input id="price" type="number" min="0" required
+                                    placeholder="160000000"></label><label>Status Unit<select id="status">
+                                    <option value="available">Available</option>
+                                    <option value="reserved">Reserved</option>
+                                    <option value="sold">Sold Out</option>
+                                </select></label></div><label>Deskripsi Kendaraan<textarea id="description" rows="5"
+                                placeholder="Jelaskan kondisi dan keunggulan kendaraan..."></textarea></label>
+                    </div>
+                    <div class="form-actions"><button type="button" class="btn light"
+                            id="cancelBtn">Batal</button><button type="submit" class="btn primary"
+                            id="publishBtn">Publish Vehicle</button></div>
+                    <div id="formMessage" class="message"></div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="admin-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
