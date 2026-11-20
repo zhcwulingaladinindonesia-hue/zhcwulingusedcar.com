@@ -1,0 +1,1334 @@
+/* =========================================================
+   ZHC USED CAR
+   MAIN STYLESHEET - CLEAN PROFESSIONAL VERSION
+   ========================================================= */
+
+:root {
+    --black: #0b0b0b;
+    --dark: #141414;
+    --text: #161616;
+    --muted: #6f6f6f;
+    --light: #f6f6f6;
+    --line: #e8e8e8;
+    --white: #ffffff;
+    --container: 1200px;
+    --radius: 12px;
+    --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+select {
+    font: inherit;
+}
+
+.container {
+    width: min(92%, var(--container));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-content {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 170px;
+    height: auto;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.navbar nav a {
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    padding: 27px 0;
+    transition: 0.25s ease;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    width: 0;
+    height: 2px;
+    background: var(--black);
+    transition: width 0.25s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--black);
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn-primary,
+.btn-secondary,
+.btn-detail,
+.search-button,
+.detail-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.btn-primary {
+    padding: 13px 22px;
+    background: var(--black);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #2b2b2b;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    padding: 13px 22px;
+    border: 1px solid #222;
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-secondary:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.btn-detail {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #111;
+    font-size: 13px;
+}
+
+.btn-detail:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background-image: url("../IMAGE/background-web.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    isolation: isolate;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: -180px;
+    bottom: -220px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 70px rgba(255, 255, 255, 0.015),
+        0 0 0 140px rgba(255, 255, 255, 0.01);
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.76) 0%,
+        rgba(0, 0, 0, 0.55) 34%,
+        rgba(0, 0, 0, 0.18) 65%,
+        rgba(0, 0, 0, 0.02) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero-brand {
+    margin-bottom: 24px;
+}
+
+.hero-brand img {
+    width: 270px;
+    height: auto;
+}
+
+.hero-label,
+.section-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-label {
+    margin-bottom: 15px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    max-width: 700px;
+    margin-bottom: 24px;
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1.02;
+    letter-spacing: -2px;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+.hero h1 span {
+    display: block;
+    font-weight: 300;
+    opacity: 0.68;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin-bottom: 34px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.8;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero .btn-primary {
+    background: #fff;
+    color: #111;
+}
+
+.hero .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: transparent;
+    color: #fff;
+}
+
+.hero .btn-secondary:hover {
+    background: #fff;
+    color: #111;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-section {
+    position: relative;
+    z-index: 20;
+    margin-top: -45px;
+}
+
+.search-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 14px;
+    align-items: end;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.search-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.search-item label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.search-item select {
+    width: 100%;
+    height: 46px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    background: #fff;
+    color: #222;
+    outline: none;
+}
+
+.search-item select:focus {
+    border-color: #111;
+}
+
+.search-button {
+    height: 46px;
+    padding: 0 24px;
+    border: 0;
+    background: var(--black);
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background: #292929;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.unit-section,
+.benefit-section,
+.contact-section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 42px;
+}
+
+.section-heading.center {
+    display: block;
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-heading h1,
+.section-heading h2 {
+    margin-top: 5px;
+    font-size: 44px;
+    line-height: 1.12;
+    letter-spacing: -1px;
+}
+
+.section-heading h1 span,
+.section-heading h2 span {
+    opacity: 0.45;
+}
+
+.section-heading p:not(.section-label) {
+    margin-top: 14px;
+    color: var(--muted);
+}
+
+.view-all {
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CARDS / INVENTORY
+   ========================================================= */
+
+.unit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.car-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.035);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.10);
+}
+
+.car-card.is-hidden {
+    display: none;
+}
+
+.car-image {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+    background: #f4f4f4;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.car-card:hover .car-image img {
+    transform: scale(1.025);
+}
+
+.status,
+.detail-status {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    padding: 7px 11px;
+    border-radius: 5px;
+    background: #fff;
+    color: #111;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.car-info {
+    padding: 23px;
+}
+
+.car-brand {
+    margin-bottom: 3px;
+    color: #777;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.car-info h3 {
+    margin: 5px 0 12px;
+    font-size: 22px;
+    line-height: 1.25;
+}
+
+.car-spec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: #777;
+    font-size: 13px;
+}
+
+.car-price {
+    margin-bottom: 18px;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.no-result {
+    margin-top: 30px;
+    padding: 38px 24px;
+    border: 1px dashed #ccc;
+    border-radius: var(--radius);
+    background: #fafafa;
+    text-align: center;
+}
+
+.no-result h3 {
+    margin-bottom: 5px;
+}
+
+.no-result p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   BENEFIT
+   ========================================================= */
+
+.benefit-section {
+    padding: 110px 0;
+    background: #f5f5f5;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.benefit-card {
+    position: relative;
+    min-height: 255px;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.035);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.benefit-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: #111;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.09);
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-number {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    color: #cfcfcf;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.benefit-card h3 {
+    margin-bottom: 9px;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TRADE IN
+   ========================================================= */
+
+.trade-section {
+    padding: 32px 0;
+    background: #f5f5f5;
+}
+
+.trade-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 50px;
+    padding: 58px 62px;
+    border-radius: 18px;
+    background: #0d0d0d;
+    color: #fff;
+    overflow: hidden;
+}
+
+.trade-card::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -180px;
+    top: -220px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 50%;
+    box-shadow: 0 0 0 60px rgba(255,255,255,.015), 0 0 0 120px rgba(255,255,255,.01);
+    pointer-events: none;
+}
+
+.trade-copy,
+.trade-button {
+    position: relative;
+    z-index: 2;
+}
+
+.trade-copy .section-label {
+    color: #999;
+}
+
+.trade-content h2,
+.trade-card h2 {
+    margin: 8px 0 12px;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.trade-copy p:not(.section-label) {
+    max-width: 650px;
+    color: #c5c5c5;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.trade-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-width: 205px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background: #fff;
+    color: #111;
+    font-size: 14px;
+    font-weight: 800;
+    transition: .25s ease;
+}
+
+.trade-button:hover {
+    transform: translateY(-3px);
+    background: #e8e8e8;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-section {
+    padding: 110px 0;
+    background: #fff;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 70px;
+    align-items: center;
+    padding: 62px;
+    border: 1px solid #e7e7e7;
+    border-radius: 18px;
+    background: #fafafa;
+}
+
+.contact-copy h2 {
+    margin: 8px 0 14px;
+    font-size: clamp(38px, 5vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.contact-copy h2 span {
+    opacity: .42;
+}
+
+.contact-copy > p:last-child {
+    max-width: 540px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.contact-buttons {
+    display: grid;
+    gap: 10px;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background: #fff;
+    color: #111;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.contact-button:hover {
+    border-color: #111;
+    transform: translateX(3px);
+}
+
+.contact-button-primary {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+}
+
+.contact-button-primary:hover {
+    background: #2a2a2a;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding: 58px 0 0;
+    background: #080808;
+    color: #fff;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    padding-bottom: 45px;
+}
+
+.footer-brand img {
+    width: 180px;
+    margin-bottom: 16px;
+}
+
+.footer-brand p,
+.footer-info p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-info {
+    padding-top: 4px;
+}
+
+.footer-label {
+    margin-bottom: 7px;
+    color: #666 !important;
+    font-size: 10px !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.footer-info h3 {
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+
+.footer-bottom {
+    padding: 20px 0;
+    border-top: 1px solid #222;
+}
+
+.footer-bottom p {
+    color: #777;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   DETAIL PAGE
+   ========================================================= */
+
+.detail-section {
+    padding: 70px 0 100px;
+    background: #f7f7f7;
+}
+
+.detail-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+    color: #777;
+    font-size: 13px;
+}
+
+.detail-breadcrumb a {
+    color: #222;
+    font-weight: 700;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.detail-gallery {
+    position: relative;
+}
+
+.detail-main-image {
+    position: relative;
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #eee;
+    border: 1px solid #e5e5e5;
+}
+
+.detail-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.detail-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.detail-thumbnails img {
+    width: 100%;
+    height: 82px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background: #eee;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.detail-thumbnails img:hover {
+    opacity: 0.75;
+}
+
+.detail-thumbnails img.active {
+    border-color: #111;
+}
+
+.detail-info {
+    padding: 10px 0;
+}
+
+.detail-info h1 {
+    margin: 0 0 20px;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+.detail-price {
+    margin-bottom: 28px;
+    color: #111;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.detail-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 28px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.detail-spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 17px 10px;
+}
+
+.detail-spec-item:nth-child(odd) {
+    border-right: 1px solid #eee;
+}
+
+.detail-spec-item span {
+    color: #777;
+    font-size: 12px;
+}
+
+.detail-spec-item strong {
+    font-size: 15px;
+}
+
+.detail-description {
+    margin-bottom: 28px;
+}
+
+.detail-description h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.detail-description p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.detail-whatsapp {
+    width: 100%;
+    padding: 16px 20px;
+    background: #111;
+    color: #fff;
+}
+
+.detail-whatsapp:hover {
+    background: #2a2a2a;
+}
+
+.detail-back {
+    display: block;
+    margin-top: 18px;
+    color: #222;
+    text-align: center;
+    font-size: 14px;
+}
+
+.detail-back:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+    .navbar nav {
+        display: none;
+    }
+
+    .search-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .unit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .container {
+        width: 92%;
+    }
+
+    .navbar-content {
+        min-height: 68px;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 145px;
+    }
+
+    .navbar > .container > .btn-primary,
+    .navbar-content > .btn-primary {
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 590px;
+        background-position: 62% center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.82) 0%,
+            rgba(0, 0, 0, 0.58) 55%,
+            rgba(0, 0, 0, 0.18) 100%
+        );
+    }
+
+    .hero-brand img {
+        width: 210px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+    }
+
+    .search-section {
+        margin-top: -30px;
+    }
+
+    .search-box {
+        grid-template-columns: 1fr;
+        padding: 17px;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .unit-section,
+    .benefit-section,
+    .contact-section {
+        padding: 72px 0;
+    }
+
+    .section-heading {
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    .section-heading.center {
+        margin-bottom: 34px;
+    }
+
+    .section-heading h1,
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .view-all {
+        display: inline-block;
+        margin-top: 12px;
+    }
+
+    .unit-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .car-image {
+        height: 270px;
+    }
+
+    .car-info {
+        padding: 20px;
+    }
+
+    .car-info h3 {
+        font-size: 21px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .benefit-card {
+        min-height: 0;
+        padding: 25px;
+    }
+
+    .benefit-icon {
+        margin-bottom: 18px;
+    }
+
+    .trade-section {
+        padding: 18px 0;
+    }
+
+    .trade-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 36px 25px;
+        border-radius: 14px;
+    }
+
+    .trade-card h2 {
+        font-size: 36px;
+    }
+
+    .trade-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .contact-section {
+        padding: 75px 0;
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 30px 24px;
+        border-radius: 14px;
+    }
+
+    .contact-copy h2 {
+        font-size: 36px;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-bottom: 35px;
+    }
+
+    .detail-section {
+        padding: 45px 0 65px;
+    }
+
+    .detail-grid {
+        gap: 30px;
+    }
+
+    .detail-main-image {
+        height: 320px;
+        border-radius: 10px;
+    }
+
+    .detail-thumbnails {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .detail-thumbnails img {
+        height: 72px;
+    }
+
+    .detail-info h1 {
+        font-size: 31px;
+    }
+
+    .detail-price {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .logo img {
+        width: 130px;
+    }
+
+    .navbar-content > .btn-primary {
+        padding: 10px 12px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .car-image {
+        height: 240px;
+    }
+}
+
+
+/* =========================================
+   TRUST STATISTICS
+========================================= */
+.trust-section {
+    padding: 45px 0;
+    background: #111111;
+    color: #ffffff;
+}
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+.trust-item {
+    text-align: center;
+    padding: 10px 25px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+}
+.trust-item:last-child { border-right: none; }
+.trust-item strong {
+    display: block;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.trust-item span {
+    display: block;
+    color: #aaaaaa;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+@media (max-width: 600px) {
+    .trust-section { padding: 35px 0; }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+    .trust-item { padding: 5px 15px; }
+    .trust-item:nth-child(2) { border-right: none; }
+    .trust-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.15); }
+    .trust-item strong { font-size: 28px; }
+    .trust-item span { font-size: 10px; line-height: 1.4; }
+}
+/* ================= PAGINATION ================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.pagination button {
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pagination button:hover {
+    background: #f2f2f2;
+}
+
+.pagination button.active {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+/* CMS dynamic inventory additions */
+.inventory-message{padding:24px;color:#777}.detail-description ul{padding-left:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.detail-description li{font-size:14px;color:#555}@media(max-width:600px){.detail-description ul{grid-template-columns:1fr}}
